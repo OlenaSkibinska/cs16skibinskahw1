@@ -92,7 +92,9 @@ public class TemperatureSeriesAnalysis {
             if (Math.abs(closestToValue - tempValue) > Math.abs(temperatureSeries[i] - tempValue)) {
                 closestToValue = temperatureSeries[i];
             }
-            else if (Math.abs(closestToValue - tempValue) == Math.abs(temperatureSeries[i] - tempValue) && temperatureSeries[i] > tempValue) {
+            else if (Math.abs(closestToValue - tempValue) ==
+                    Math.abs(temperatureSeries[i] - tempValue)
+                    && temperatureSeries[i] > tempValue) {
                 closestToValue = temperatureSeries[i];
             }
 
@@ -138,11 +140,13 @@ public class TemperatureSeriesAnalysis {
         }
         return newList;
     }
-    public TempSummaryStatistics summaryStatistics() throws IllegalArgumentException {
+    public TempSummaryStatistics summaryStatistics()
+            throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
-        TempSummaryStatistics myEx = new TempSummaryStatistics(this.average(), this.deviation(), this.min(), this.max());
+        TempSummaryStatistics myEx = new TempSummaryStatistics
+                (this.average(), this.deviation(), this.min(), this.max());
 
         return myEx;
     }
