@@ -30,12 +30,13 @@ public class TemperatureSeriesAnalysis {
         double ner = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
 
-           ner += (temperatureSeries[i] - average()*(temperatureSeries[i] - average()));
+           ner += Math.pow(temperatureSeries[i] - average(), 2);
         }
         double ytr = Math.sqrt(ner / temperatureSeries.length);
 
         return ytr;
     }
+
     public double min() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
