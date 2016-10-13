@@ -32,7 +32,7 @@ public class TemperatureSeriesAnalysis {
 
            ner += Math.pow(temperatureSeries[i] - average(), 2);
         }
-        double ytr = Math.sqrt(ner / temperatureSeries.length) ;
+        double ytr = Math.sqrt(ner / temperatureSeries.length);
 
         return ytr;
     }
@@ -105,7 +105,7 @@ public class TemperatureSeriesAnalysis {
         int c  = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
             if (temperatureSeries[i] < tempValue) {
-                c ++;
+                c++;
             }
         }
         double[] newList = new double[c];
@@ -123,7 +123,7 @@ public class TemperatureSeriesAnalysis {
         int c  = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
             if (temperatureSeries[i] >= tempValue) {
-                c ++;
+                c++;
             }
         }
         double[] newList = new double[c];
@@ -138,26 +138,26 @@ public class TemperatureSeriesAnalysis {
 
         return newList;
     }
-    public TempSummaryStatistics summaryStatistics() throws IllegalArgumentException{
+    public TempSummaryStatistics summaryStatistics() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
-        TempSummaryStatistics myEx = new TempSummaryStatistics(this.average(), this.deviation(), this.min(), this.max() );
+        TempSummaryStatistics myEx = new TempSummaryStatistics(this.average(), this.deviation(), this.min(), this.max());
 
         return null;
     }
 
-    public int addTemps(double... temps) throws InputMismatchException{
-        for (int i = 0; i < temps.length; ++i){
-            if(temps[i] < - 273){
+    public int addTemps(double... temps) throws InputMismatchException {
+        for (int i = 0; i < temps.length; ++i) {
+            if (temps[i] < -273) {
                 throw new InputMismatchException();
             }
         }
         double[] listAddTemps = new double[Math.max(temperatureSeries.length + temps.length, temperatureSeries.length*2)];
-        for(int i = 0; i < temperatureSeries.length; ++i){
+        for (int i = 0; i < temperatureSeries.length; ++i) {
             listAddTemps[i] = temperatureSeries[i];
         }
-        for(int i = 0; i < temps.length; ++i){
+        for (int i = 0; i < temps.length; ++i) {
             listAddTemps[i + temperatureSeries.length] = temps[i];
         }
         int finalList = temperatureSeries.length + temps.length;
