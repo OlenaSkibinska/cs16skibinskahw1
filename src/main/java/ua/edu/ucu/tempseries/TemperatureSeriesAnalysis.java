@@ -36,7 +36,6 @@ public class TemperatureSeriesAnalysis {
 
         return ytr;
     }
-
     public double min() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
