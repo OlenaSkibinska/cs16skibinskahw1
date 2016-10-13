@@ -70,7 +70,8 @@ public class TemperatureSeriesAnalysis {
         }
         double closestToZero = temperatureSeries[0];
         for (int i = 0; i < temperatureSeries.length; ++i) {
-            if (Math.abs(closestToZero) == Math.abs(temperatureSeries[i]) && temperatureSeries[i] > 0) {
+            if (Math.abs(closestToZero) == Math.abs(temperatureSeries[i])
+                    && temperatureSeries[i] > 0) {
                 closestToZero = temperatureSeries[i];
             }
             else if (Math.abs(temperatureSeries[i]) < Math.abs(closestToZero)) {
@@ -143,7 +144,7 @@ public class TemperatureSeriesAnalysis {
         }
         TempSummaryStatistics myEx = new TempSummaryStatistics(this.average(), this.deviation(), this.min(), this.max());
 
-        return null;
+        return myEx;
     }
 
     public int addTemps(double... temps) throws InputMismatchException {
