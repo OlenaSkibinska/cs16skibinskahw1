@@ -9,7 +9,7 @@ public class TemperatureSeriesAnalysis {
         this.temperatureSeries = temperatureSeries;
     }
 
-    public double average() throws IllegalArgumentException{
+    public double average() throws IllegalArgumentException {
         int sum = 0;
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
@@ -23,12 +23,12 @@ public class TemperatureSeriesAnalysis {
         return average;
     }
 
-    public double deviation() throws IllegalArgumentException{
+    public double deviation() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
         double ner = 0;
-        for (int i = 0; i < temperatureSeries.length; ++i){
+        for (int i = 0; i < temperatureSeries.length; ++i) {
 
            ner += Math.pow(temperatureSeries[i] - average(), 2);
         }
@@ -37,7 +37,7 @@ public class TemperatureSeriesAnalysis {
         return ytr;
     }
 
-    public double min() throws IllegalArgumentException{
+    public double min() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
@@ -50,7 +50,7 @@ public class TemperatureSeriesAnalysis {
         return theMin;
     }
 
-    public double max() throws IllegalArgumentException{
+    public double max() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
@@ -64,16 +64,16 @@ public class TemperatureSeriesAnalysis {
         return theMax;
     }
 
-    public double findTempClosestToZero() throws IllegalArgumentException{
+    public double findTempClosestToZero() throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
         double closestToZero = temperatureSeries[0];
-        for (int i = 0; i < temperatureSeries.length; ++i){
-            if(Math.abs(closestToZero) == Math.abs(temperatureSeries[i]) && temperatureSeries[i] > 0){
+        for (int i = 0; i < temperatureSeries.length; ++i) {
+            if (Math.abs(closestToZero) == Math.abs(temperatureSeries[i]) && temperatureSeries[i] > 0) {
                 closestToZero = temperatureSeries[i];
             }
-            else if (Math.abs(temperatureSeries[i]) < Math.abs(closestToZero)){
+            else if (Math.abs(temperatureSeries[i]) < Math.abs(closestToZero)) {
                 closestToZero = temperatureSeries[i];
 
             }
@@ -82,16 +82,16 @@ public class TemperatureSeriesAnalysis {
         return closestToZero;
     }
 
-    public double findTempClosestToValue(double tempValue) throws IllegalArgumentException{
+    public double findTempClosestToValue(double tempValue) throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException();
         }
         double closestToValue = temperatureSeries[0];
-        for (int i = 0; i < temperatureSeries.length; ++i){
-            if(Math.abs(closestToValue - tempValue) > Math.abs(temperatureSeries[i] - tempValue)){
+        for (int i = 0; i < temperatureSeries.length; ++i) {
+            if (Math.abs(closestToValue - tempValue) > Math.abs(temperatureSeries[i] - tempValue)) {
                 closestToValue = temperatureSeries[i];
             }
-            else if(Math.abs(closestToValue - tempValue) == Math.abs(temperatureSeries[i] - tempValue) && temperatureSeries[i] > tempValue){
+            else if (Math.abs(closestToValue - tempValue) == Math.abs(temperatureSeries[i] - tempValue) && temperatureSeries[i] > tempValue) {
                 closestToValue = temperatureSeries[i];
             }
 
@@ -104,14 +104,14 @@ public class TemperatureSeriesAnalysis {
     public double[] findTempsLessThen(double tempValue) {
         int c  = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
-            if(temperatureSeries[i] < tempValue) {
+            if (temperatureSeries[i] < tempValue) {
                 c ++;
             }
         }
         double[] newList = new double[c];
         c = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
-            if(temperatureSeries[i] < tempValue) {
+            if (temperatureSeries[i] < tempValue) {
                 newList[c] = temperatureSeries[i];
                 c++;
             }
@@ -122,14 +122,14 @@ public class TemperatureSeriesAnalysis {
     public double[] findTempsGreaterThen(double tempValue) {
         int c  = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
-            if(temperatureSeries[i] >= tempValue) {
+            if (temperatureSeries[i] >= tempValue) {
                 c ++;
             }
         }
         double[] newList = new double[c];
        c = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
-            if(temperatureSeries[i] >= tempValue) {
+            if (temperatureSeries[i] >= tempValue) {
                 newList[c] = temperatureSeries[i];
                 c++;
 
