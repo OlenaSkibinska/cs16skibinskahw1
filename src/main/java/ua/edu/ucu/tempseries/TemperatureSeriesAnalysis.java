@@ -30,7 +30,7 @@ public class TemperatureSeriesAnalysis {
         double ner = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
 
-           ner += Math.pow(temperatureSeries[i] - average(), 2);
+           ner += (temperatureSeries[i] - average()*(temperatureSeries[i] - average()));
         }
         double ytr = Math.sqrt(ner / temperatureSeries.length);
 
