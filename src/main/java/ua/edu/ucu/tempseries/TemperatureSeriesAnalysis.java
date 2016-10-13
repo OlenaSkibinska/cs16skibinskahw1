@@ -146,8 +146,8 @@ public class TemperatureSeriesAnalysis {
             throws IllegalArgumentException {
         if (temperatureSeries.length == 0) {
             throw new IllegalArgumentException(); }
-        TempSummaryStatistics myEx = new TempSummaryStatistics
-                (this.average(), this.deviation(), this.min(), this.max());
+        TempSummaryStatistics myEx = new TempSummaryStatistics(
+                this.average(), this.deviation(), this.min(), this.max());
 
         return myEx;
     }
