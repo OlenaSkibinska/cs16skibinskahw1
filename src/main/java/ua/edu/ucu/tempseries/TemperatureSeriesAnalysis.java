@@ -120,18 +120,18 @@ public class TemperatureSeriesAnalysis {
     }
 
     public double[] findTempsGreaterThen(double tempValue) {
-        int c  = 0;
+        int k  = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
             if (temperatureSeries[i] >= tempValue) {
-                c++;
+                k++;
             }
         }
         double[] newList = new double[c];
-       c = 0;
+       k = 0;
         for (int i = 0; i < temperatureSeries.length; ++i) {
             if (temperatureSeries[i] >= tempValue) {
-                newList[c] = temperatureSeries[i];
-                c++;
+                newList[k] = temperatureSeries[i];
+                k++;
 
             }
         }
