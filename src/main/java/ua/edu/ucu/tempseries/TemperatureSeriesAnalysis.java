@@ -135,7 +135,6 @@ public class TemperatureSeriesAnalysis {
 
             }
         }
-
         return newList;
     }
     public TempSummaryStatistics summaryStatistics() throws IllegalArgumentException {
